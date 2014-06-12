@@ -29,7 +29,7 @@ This will search for *.php files in `typo3_src.git` and replace the copyright he
 Features And Considerations
 ---------------------------
 
-- The script creates a file `copyright.ignored` which contains a list of files that were ignored during the last run (e.g. does not contain a copyright header)
+- The script creates a file `copyright.ignored` which contains a list of files that were ignored during the last run (e.g. due to missing copyright headers)
 - The script excludes directories `.git` and `contrib` during the scan
 - Copyright headers in *.php files must occur in the first 42 lines (see script source)
 - Copyright headers must contain at least the words "copyright" and "typo3"
