@@ -75,6 +75,7 @@ for FILE in $(echo "${FILELIST}") ; do
 
 			let START_LINENUMBER=${START_LINENUMBER}-1
 			let END_LINENUMBER=${END_LINENUMBER}+1
+			let TOTAL_LINES=${TOTAL_LINES}+1
 
 			cat "${FILE}" | head -${START_LINENUMBER} > "${FILE}.copyright"
 			cat "copyright-php-files.txt" >> "${FILE}.copyright"
