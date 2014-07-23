@@ -11,6 +11,7 @@
 #
 # The current version of the script only supports *.php files:
 INCLUDE_FILE_PATTERN='\.php$'
+#INCLUDE_FILE_PATTERN='\.js$'
 
 DIRECTORY=$1
 PROCESS_MAX=$2
@@ -52,7 +53,13 @@ touch "copyright.exclude"
 
 #echo ; echo "Maximum number of files to process: ${PROCESS_MAX}" ; echo
 echo ; echo "Scanning directory..."
+
+# for .php files:
 FILELIST=$(find "${DIRECTORY}" -path "${DIRECTORY}/.git" -path "${DIRECTORY}/contrib" -prune -o -type f -print | egrep "${INCLUDE_FILE_PATTERN}")
+
+# for .js files:
+#FILELIST=$(find "${DIRECTORY}" -path "${DIRECTORY}/typo3/contrib" -prune -o -type f -print | egrep "${INCLUDE_FILE_PATTERN}")
+
 TOTAL_FILES=$(echo "${FILELIST}" | wc --line)
 
 tput cuu1
